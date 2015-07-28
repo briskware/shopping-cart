@@ -34,7 +34,7 @@ with Specs2RouteTest with HttpService with NoTimeConversions {
   "The ApiService" should {
     "return a result for a valid cart" in {
       Post(s"/api/checkout", HttpEntity(`application/json`, """{"products":[{"kind":"Apple"},{"kind":"Apple"},{"kind":"Orange"},{"kind":"Apple"}]}""")) ~> route ~> check {
-        body.asString.toDouble must be equalTo (2.05D)
+        body.asString.toDouble must be equalTo (1.45D)
       }
     }
   }
